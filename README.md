@@ -11,7 +11,7 @@ The function will downlad he picture from 'url' and save as 'file_name' in folde
 The fuction will download a list of Spacex launch pictures for a given launch ID. If no ID is provided, the latest ID will be used.
 
 
-## 'fetch_apod(path)`
+## `fetch_apod(path)`
 
 The fuction will download a NASA picture of the day.
 
