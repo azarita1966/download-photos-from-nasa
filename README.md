@@ -2,7 +2,7 @@
 
 ## Downloads photos from NASA EPIC to your computer
 
-###download_epic_pics()
+### download_epic_pics()
 
 
 
@@ -14,7 +14,7 @@ Creates a list of images, available from the NASA epic site:
 Saves them in a list 'epic_images'
 
 
-###Algorithm:
+### Algorithm:
 
 1. Create a list 'epic_images'.
 2. Save current date and time in a varaible 'now'.
