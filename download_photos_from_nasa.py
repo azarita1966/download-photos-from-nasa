@@ -1,5 +1,3 @@
-#Download photos from NASA
-
 import requests
 import os
 import pathlib
@@ -15,18 +13,15 @@ def download_epic_pics():
     for record in response_json:
         epic_images.append(record['image'])
 
-download_epic_pics()
-
 now = datetime.datetime.now()
-
+download_epic_pics()
 epic_urls =[]
 for image in epic_images:
     picture =f'{image}.png'
     new_path = "/".join(['https://api.nasa.gov/EPIC/archive/natural',str(now.year),str(now.month),str(now.day),'png',picture])
-    print(new_path)
+    #print(new_path)
     new_url = f'{new_path}?api_key=DEMO_KEY'
     epic_urls.append(new_url)
-print(epic_urls)
 
 for i, url in enumerate(epic_urls):
     filepath = 'nasa/'
