@@ -20,4 +20,6 @@ def fetch_apod(file_path):
     filename =(f'{file_path}/apod.jpg')
     with open(filename, 'wb') as file:
         file.write(resp)
-fetch_apod('images/')
+
+if __name__ == '__main__':
+    fetch_apod('images/')
