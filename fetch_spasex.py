@@ -19,12 +19,13 @@ def fetch_spacex_launch(file_path):
     payload = {'id':args.launch_id}
     response = requests.get(url, json=payload)
     response.raise_for_status()
-    json_resp =response.json()[31]['links']['flickr']['original']
-    for i, link in enumerate(json_resp):
-        resp = requests.get(link)
-        filename =(f'{file_path}/spacex_{i}.jpeg')
+    resp =response.json()[31]['links']['flickr']['original']
+    for number, link in enumerate(resp):
+        photo_link = requests.get(link)
+        filename =(f'{file_path}/spacex_{number}.jpeg')
         with open(filename, 'wb') as file:
-            file.write(resp.content)
+            file.write(photo_link.content)
 
+if __name__ is '__main__'
 fetch_spacex_launch('new_spacex')
 
