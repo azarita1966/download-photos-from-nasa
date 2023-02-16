@@ -32,7 +32,10 @@ Save images available from the NASA epic site in a separate files, grouped in a 
 
 ### Algorithm:
 
-1. Create a list 'epic_images'..
+1. Create a list 'epic_images'.
+
+!C:\Users\44795\OneDrive\Pictures\Screenshots\2023-02-16.png
+
 2. Using the names of images, add .png extensions.
 3. Create a list urls, where the name of the png file is a part of url.
 4. Create folder nasa/ in your computer.
