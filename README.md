@@ -14,11 +14,6 @@ Run the program by typing in the Terminal:
 
 ## Functions in the package
 
-## `download_pics(path, url, file_name)`
-
-The function will downlad he picture from 'url' and save as 'file_name' in folder 'path'
-
-
 ## `fetch_spacex(path, launch_id)`
 
 The fuction will download a list of Spacex launch pictures for a given launch ID. If no ID is provided, the latest ID will be used.
