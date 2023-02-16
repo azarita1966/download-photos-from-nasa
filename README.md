@@ -34,7 +34,7 @@ Save images available from the NASA epic site in a separate files, grouped in a 
 
 1. Create a list 'epic_images'.
 
-!C:\Users\44795\OneDrive\Pictures\Screenshots\2023-02-16.png
+![alt text](C:\Users\44795\OneDrive\Pictures\Screenshots\2023-02-16.png)
 
 2. Using the names of images, add .png extensions.
 3. Create a list urls, where the name of the png file is a part of url.
