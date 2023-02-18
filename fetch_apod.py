@@ -1,19 +1,11 @@
 import requests
 import argparse
+from dotenv import load_dotenv
 
-parser = argparse.ArgumentParser("api_key")
-
-parser.parse_args()
-parser.add_argument('--my_api_key',
-                    help = 'print your api key',
-                    default = ['DEMO_KEY'])
-
-args = parser.parse_args()
-
-
+load_dotenv()
 def fetch_apod(file_path):
     url = 'https://api.nasa.gov/planetary/apod'
-    payload = {'api_key':args.my_api_key}
+    payload = {'api_key':os.environ.get("NASA_KEY")}
     response = requests.get(url, json=payload)
     response.raise_for_status()
     resp = response.content()["url"]

@@ -1,16 +1,30 @@
 # Downloads photos from Spasex and NASA (APOD and EPIC) to your computer
 
+## How to install
+Python has te be installed
+Clon the repository
+Install the dependencies:
+
+`pip install -r requiremnts.txt`
+
+Get your API key at https://api.nasa.gov/ and save in Notepad as NASA_KEY .env in the same directory
+
+`NASA_KEY=c5c5f7977f14e54af...`
+
+## Description of the program
+
+Run the program by typing in the Terminal: 
+
+`python download_photos_from_nasa.py`
+
+![code on command line](/2023-02-16.png)
+
+
 ## download_photos_from_nasa()
 
 Save images available from the NASA epic site in a separate files, grouped in a folder
 
 
-Run the program by typing in the Terminal: 
-
-
-`python download_photos_from_nasa.py`
-
-![code on command line](/2023-02-16.png)
 
 ## Functions in the package
 
