@@ -1,15 +1,21 @@
-# Downloads photos from Spasex and NASA (APOD and EPIC) to your computer
+# Downloads photos from Spasex and NASA (APOD and EPIC) to your computer and post in Telegram Channel
 
 ## How to install
-Python has te be installed
-Clon the repository
+Python has to be installed.
+Clon the repository.
 Install the dependencies:
 
 `pip install -r requiremnts.txt`
 
-Get your API key at https://api.nasa.gov/ and save in Notepad as NASA_KEY .env in the same directory
+Get your API key at https://api.nasa.gov/ and save in Notepad as NASA_KEY in file.env in the same directory.
+Create a bot and get your token from BotFather in Telegram and save it as TELEGRAM_BOT_TOKEN in file .env.
+
 
 `NASA_KEY=c5c5f7977f14e54af...`
+`TELEGRAM_BOT_TOKEN = 34erT664...`
+
+Make your bot an administrator of a channel.  
+Create folder 'nasa' in your directory
 
 ## Description of the program
 
@@ -19,12 +25,16 @@ Run the program by typing in the Terminal:
 
 ![code on command line](/2023-02-16.png)
 
+The program will first download the EPIC photos from NASA page, save them in directory /nasa 
+and then post them in your channel one by one every 4 hours, unless you specify other time by inputing the number of seconds 
+after python download_photos_from_nasa.py. When all pictures are posted, it will post them again, reshuffled.
+
 
 ## download_photos_from_nasa()
 
-Save images available from the NASA epic site in a separate files, grouped in a folder
+Save images available from the NASA epic site in a separate files, grouped in a folder.
 
-
+Images posted in a Telegram Channel 
 
 ## Functions in the package
 
