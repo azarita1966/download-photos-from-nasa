@@ -2,6 +2,7 @@ import requests
 import os
 import pathlib
 import datetime
+import telegram
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -34,6 +35,13 @@ def main():
         filepath =(f'{directory}/epic_{number}')
         with open(filepath, 'wb') as file:
             file.write(resp.content)
+
+    bot = telegram.Bot(token=os.environ['TELEGRAM_TOKEN']
+    print(bot.get_me())
+    updates = bot.get_updates()
+    print(updates[0])
+    chat_id = updates[-1].message.chat_id
+    bot.send_message(text='Hi Alina!', chat_id=chat_id)
 
 if __name__ == '__main__':
     main()
