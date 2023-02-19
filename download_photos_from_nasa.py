@@ -42,7 +42,7 @@ def main():
     print(updates[0])
     chat_id = updates[-1].message.chat_id
     bot.send_message(text='Hi Alina!', chat_id=chat_id)
-
+    bot.send_document(chat_id=chat_id, document=open("new_spacex/spacex_0.jpeg", 'rb'))
 if __name__ == '__main__':
     main()
 
