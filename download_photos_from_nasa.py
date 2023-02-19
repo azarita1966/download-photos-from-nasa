@@ -3,6 +3,8 @@ import os
 import pathlib
 import datetime
 import telegram
+import argparse
+import time
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -43,6 +45,31 @@ def main():
     chat_id = updates[-1].message.chat_id
     bot.send_message(text='Hi Alina!', chat_id=chat_id)
     bot.send_document(chat_id=chat_id, document=open("new_spacex/spacex_0.jpeg", 'rb'))
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--sleep', help='sleep time',
+        type=int,
+        default=14400)
+    args = parser.parse_args()
+    while True:
+        directory = "new_spacex/"
+        filesindir = os.listdir(directory)
+        list_telegram_pictures = []
+        for filesindirs in filesindir:
+            path = os.path.join(filesindirs)
+            file = os.path.join(str(directory), path)
+            list_telegram_pictures.append(file)
+            time.sleep(args.sleep)
+            bot.send_document(chat_id=chat_id, document=open(file, 'rb'))
+        return (list_telegram_pictures)
+
+        for file in random.shuffle(list_telegram_pictures):
+            bot.send_document(chat_id=chat_id, document=open(file, 'rb'))
+            time.sleep(args.sleep)
+
+
 if __name__ == '__main__':
     main()
+
 
