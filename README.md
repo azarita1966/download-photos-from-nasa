@@ -49,7 +49,7 @@ Run the program by typing in the Terminal:
 
 Images posted in a Telegram Channel:
 
-![code on command line](/2023-02-271.png)
+![View in your telegram channel](/2023-02-271.png)
 
 
 ## Description of program fetch_spacex(path, launch_id):
