@@ -41,11 +41,12 @@ The program will first download the EPIC photos from NASA page, save them in dir
 ## Description of program telegram_bot.py
 
 The program will post photos in your channel one by one every 4 hours, unless you specify other time by inputing the number of seconds 
-after python download_photos_from_nasa.py. When all pictures are posted, it will post them again, reshuffled.
+The pictures are taken from a given directory. 
+When all pictures are posted, the program will post them again, reshuffled.
 
 Run the program by typing in the Terminal: 
 
-`python telegram_bot.py`
+`python telegram_bot.py 15000 '/spasex'`
 
 Images posted in a Telegram Channel:
 
