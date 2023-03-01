@@ -7,12 +7,16 @@ Install the dependencies:
 
 `pip install -r requirements.txt`
 
-Get your API key at https://api.nasa.gov/ and 
-save in Notepad as NASA_KEY in file .env in the same directory.
+Get your API key at https://api.nasa.gov/ and savi it .env.
+
 Create a bot and get your token from BotFather in Telegram and save 
-hit as TELEGRAM_BOT_TOKEN in .env. 
+it as TELEGRAM_BOT_TOKEN in .env. 
 Make your bot an administrator of a channel.
 
+## Environment variables
+
+Some of the code will need environment varaibles.
+In order to set them up, save them in Notepad file .env in the same directory.
 
 `NASA_KEY=c5c5f7977f14e54af...`
 
