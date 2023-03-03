@@ -1,7 +1,6 @@
 Package              Version
 -------------------- -----------
-
-pandas               1.5.3
-python-dotenv        0.21.0
-requests             2.28.1
-urllib3              1.26.13
+﻿requests==2.28.1
+urllib3==1.26.13
+python-dotenv==0.21.0
+python-telegram-bot==13.8
