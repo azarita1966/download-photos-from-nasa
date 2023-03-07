@@ -11,14 +11,9 @@ from pathlib import Path
 from os.path import isfile, join
 from os import listdir
 
-token = os.environ['TELEGRAM_TOKEN']
-bot = telegram.Bot(token=token)
-updates = bot.get_updates()[0].message.chat
-chat_id = updates.id
 
 
 def pick_files(folder='new_spasex'):
-    print(Path.cwd())
     return [Path.cwd() / folder / filename for filename in listdir(folder) if isfile(join(folder, filename))]
 
 
@@ -42,13 +37,10 @@ def send_random_telegram_photo(token, chat_id, image, sleep=4):
 
 
 def main(folder='new_spasex', sleep=4):
-    for image in pick_files(folder='new_spasex'):
-        send_telegram_photo(token, chat_id, image, caption=None)
-        time.sleep(sleep*60*60)
-    send_random_telegram_photo(token, chat_id, image, sleep=4)
-
-if __name__ == '__main__':
-    load_dotenv()
+    token = os.environ['TELEGRAM_TOKEN']
+    bot = telegram.Bot(token=token)
+    updates = bot.get_updates()[0].message.chat
+    chat_id = updates.id
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -61,4 +53,11 @@ if __name__ == '__main__':
         default="new_spasex")
     args = parser.parse_args()
 
+    for image in pick_files(folder='new_spasex'):
+        send_telegram_photo(token, chat_id, image, caption=None)
+        time.sleep(sleep*60*60)
+    send_random_telegram_photo(token, chat_id, image, sleep=4)
+
+if __name__ == '__main__':
+    load_dotenv()
     main(folder=args.folder, sleep=args.sleep)

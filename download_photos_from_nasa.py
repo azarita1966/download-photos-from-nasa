@@ -13,7 +13,7 @@ def download_image(url, file_name, folder='images'):
         file.write(response.content)
 
 
-def get_nasa_request(url, nasa_key):
+def get_nasa_response(url, nasa_key):
     params = {
         'api_key': nasa_key,
         }
@@ -22,13 +22,9 @@ def get_nasa_request(url, nasa_key):
     return response.json()
 
 
-def get_epic_pics(nasa_key, natural=True, folder='epics'):
-    if natural:
-        collection = 'natural'
-    else:
-        collection = 'enhanced'
+def get_epic_pics(nasa_key, collection = 'natural', folder='epics'):
     epic_url = "https://api.nasa.gov/EPIC/api/natural"
-    for image in get_nasa_request(epic_url, nasa_key):
+    for image in get_nasa_response(epic_url, nasa_key):
         image_name = image['image']
         datetime_date = datetime.datetime.strptime(image['date'],'%Y-%m-%d %H:%M:%S')
         image_date = datetime_date.strftime('%Y/%m/%d')
